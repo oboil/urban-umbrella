@@ -1,0 +1,155 @@
+/* styles/common/schedule.module.css */
+
+.container {
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.containerMobile {
+  padding: var(--spacing-md);
+}
+
+.containerTablet {
+  padding: var(--spacing-lg);
+}
+
+.header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.headerMobile {
+  margin-bottom: var(--spacing-md);
+}
+
+.headerTablet {
+  margin-bottom: var(--spacing-lg);
+}
+
+.timeTable {
+  max-height: 500px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.timeTableMobile {
+  max-height: 400px;
+}
+
+.timeTableTablet {
+  max-height: 600px;
+}
+
+.timeSlot {
+  display: flex;
+  border-bottom: 1px solid var(--color-gray-200);
+  min-height: 60px;
+}
+
+.timeSlotMobile {
+  min-height: 50px;
+}
+
+.timeSlotTablet {
+  min-height: 70px;
+}
+
+.currentTimeSlot {
+  background-color: #FEF3C7;
+  border-left: 3px solid #F59E0B;
+}
+
+.timeLabel {
+  width: 80px;
+  padding: var(--spacing-md);
+  background-color: var(--color-gray-50);
+  border-right: 1px solid var(--color-gray-200);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+}
+
+.timeLabelMobile {
+  width: 60px;
+  padding: var(--spacing-sm);
+  font-size: var(--font-size-xs);
+}
+
+.timeLabelTablet {
+  width: 100px;
+  padding: var(--spacing-md);
+  font-size: var(--font-size-sm);
+}
+
+.timeContent {
+  flex: 1;
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+}
+
+.timeContentMobile {
+  padding: var(--spacing-sm);
+}
+
+.timeContentTablet {
+  padding: var(--spacing-lg);
+}
+
+.scheduleItem {
+  width: 100%;
+  padding: var(--spacing-md);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-primary);
+}
+
+.scheduleItemMobile {
+  padding: var(--spacing-sm);
+}
+
+.scheduleItemTablet {
+  padding: var(--spacing-md);
+}
+
+.availableSlot {
+  width: 100%;
+  padding: var(--spacing-md);
+  background-color: #F0FDF4;
+  border: 1px dashed #22C55E;
+  border-radius: var(--radius-md);
+}
+
+.availableSlotMobile {
+  padding: var(--spacing-sm);
+}
+
+.availableSlotTablet {
+  padding: var(--spacing-md);
+}
+
+.unavailableSlot {
+  width: 100%;
+  padding: var(--spacing-md);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.unavailableSlotMobile {
+  padding: var(--spacing-sm);
+}
+
+.unavailableSlotTablet {
+  padding: var(--spacing-md);
+}

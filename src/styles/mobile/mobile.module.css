@@ -1,0 +1,363 @@
+/* styles/mobile/mobile.module.css */
+.container {
+  min-height: 100vh;
+  background-color: var(--color-gray-100);
+  padding-bottom: 80px; /* 하단 네비게이션 공간 */
+  position: relative;
+  overflow-y: auto; /* 추가 */
+
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.container::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+
+.header {
+  background-color: white;
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  border-bottom: 1px solid var(--color-gray-200);
+  position: relative;
+  z-index: 1000;
+}
+
+.headerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+}
+
+.headerTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-800);
+  text-align: center;
+  flex: 1;
+  margin: 0;
+}
+
+.headerSpacer {
+  width: 40px; /* 메뉴 버튼과 동일한 너비 */
+}
+
+/* 햄버거 메뉴 버튼 */
+.menuButton {
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuButton:hover {
+  background-color: var(--color-gray-100);
+}
+
+.menuButton:active {
+  background-color: var(--color-gray-200);
+}
+
+.menuIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+}
+
+.menuIcon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-gray-700);
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+.menuIcon span:nth-child(1) {
+  transform-origin: top left;
+}
+
+.menuIcon span:nth-child(2) {
+  transform-origin: center;
+}
+
+.menuIcon span:nth-child(3) {
+  transform-origin: bottom left;
+}
+
+/* 메뉴가 활성화될 때의 애니메이션 (선택사항) */
+.menuButton.active .menuIcon span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.menuButton.active .menuIcon span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuButton.active .menuIcon span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.searchContainer {
+  position: relative;
+}
+
+.searchInput {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-base);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.searchInput:focus {
+  border-color: var(--color-primary);
+}
+
+.listContainer {
+  padding: var(--spacing-lg) var(--spacing-md);
+  overflow-y: auto; /* 추가 */
+  max-height: calc(100vh - 160px); /* 헤더와 네비게이션 높이 제외, 추가 */
+
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.listContainer::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+
+.quickStats {
+  background-color: white;
+  margin: 0 var(--spacing-xs) var(--spacing-lg);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.statsGrid {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statNumber {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-xs);
+}
+
+.statLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-500);
+}
+
+.classroomCard {
+  background-color: white;
+  margin: 0 var(--spacing-xs) var(--spacing-md);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.classroomCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.roomName {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-800);
+}
+
+.statusBadge {
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+.cardInfo {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-500);
+}
+
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-top: 1px solid var(--color-gray-200);
+  padding: var(--spacing-sm) 0;
+  display: flex;
+  justify-content: space-around;
+  z-index: 999;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  color: var(--color-gray-500);
+  text-decoration: none;
+  font-size: var(--font-size-xs);
+  transition: color 0.2s;
+}
+
+.navItem:hover {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.navItemActive {
+  color: var(--color-primary);
+}
+
+.navIcon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: var(--spacing-xs);
+  border-radius: var(--radius-sm);
+}
+
+/* 햄버거 아이콘용 추가 클래스 (기존 파일에 없던 것) */
+.hamburgerIcon {
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-700);
+}
+
+.hamburgerIcon:hover {
+  background-color: var(--color-gray-100);
+}
+
+.hamburgerIcon:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.hamburgerSvg {
+  transition: transform 0.2s;
+}
+
+.hamburgerIcon:active .hamburgerSvg {
+  transform: scale(0.95);
+}
+
+/* 반응형 조정 */
+@media (max-width: 480px) {
+  .headerTitle {
+    font-size: var(--font-size-lg);
+  }
+  
+  .menuButton {
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+  }
+  
+  .headerSpacer {
+    width: 36px;
+  }
+  
+  .searchInput {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+  
+  .quickStats {
+    margin: 0 0 var(--spacing-lg);
+    padding: var(--spacing-md);
+  }
+  
+  .classroomCard {
+    margin: 0 0 var(--spacing-md);
+  }
+}
+
+/* 다크모드 지원 (선택사항) */
+@media (prefers-color-scheme: dark) {
+  .container {
+    background-color: var(--color-gray-900);
+  }
+  
+  .header {
+    background-color: var(--color-gray-800);
+    border-bottom-color: var(--color-gray-700);
+  }
+  
+  .headerTitle {
+    color: white;
+  }
+  
+  .menuIcon span {
+    background-color: white;
+  }
+  
+  .searchInput {
+    background-color: var(--color-gray-700);
+    border-color: var(--color-gray-600);
+    color: white;
+  }
+  
+  .searchInput::placeholder {
+    color: var(--color-gray-400);
+  }
+  
+  .quickStats,
+  .classroomCard {
+    background-color: var(--color-gray-800);
+  }
+  
+  .roomName {
+    color: white;
+  }
+  
+  .bottomNav {
+    background-color: var(--color-gray-800);
+    border-top-color: var(--color-gray-700);
+  }
+}

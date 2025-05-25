@@ -1,0 +1,435 @@
+/* styles/common/status.module.css */
+
+/* 공통 컨테이너 */
+.container {
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* 모바일 스타일 */
+  .containerMobile {
+    padding: var(--spacing-lg) var(--spacing-md);
+    max-height: calc(100vh - 160px);
+  }
+  
+  /* 태블릿 스타일 */
+  .containerTablet {
+    flex: 1;
+    padding: var(--spacing-xl) var(--spacing-2xl);
+    max-height: calc(100vh - 80px); /* 하단바 높이만큼 조정 */
+    overflow-y: auto;
+  }
+  
+  /* 콘텐츠 헤더 (태블릿 전용) */
+  .contentHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  .contentHeaderMobile {
+    display: none;
+  }
+  
+  .contentHeaderTablet {
+    display: flex;
+  }
+  
+  .contentTitle {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-800);
+  }
+  
+  .contentTitleMobile {
+    font-size: var(--font-size-xl);
+  }
+  
+  .contentTitleTablet {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .actionButtons {
+    display: flex;
+    gap: var(--spacing-md);
+  }
+  
+  .actionButtonsMobile {
+    display: none;
+  }
+  
+  .actionButtonsTablet {
+    display: flex;
+  }
+  
+  .primaryButton {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .primaryButton:hover {
+    background-color: #2563EB;
+  }
+  
+  .secondaryButton {
+    background-color: white;
+    color: var(--color-gray-700);
+    border: 2px solid var(--color-gray-200);
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .secondaryButton:hover {
+    border-color: var(--color-gray-300);
+    background-color: var(--color-gray-50);
+  }
+  
+  /* 통계 섹션 */
+  .quickStats {
+    background-color: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .quickStatsMobile {
+    margin: 0 var(--spacing-xs) var(--spacing-lg);
+    padding: var(--spacing-lg);
+  }
+  
+  .quickStatsTablet {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-xl);
+  }
+  
+  .statsGrid {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+  }
+  
+  .statsGridMobile {
+    display: flex;
+  }
+  
+  .statsGridTablet {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xl);
+  }
+  
+  .statItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .statItemMobile {
+    flex: 1;
+  }
+  
+  .statItemTablet {
+    padding: var(--spacing-lg);
+    background-color: var(--color-gray-50);
+    border-radius: var(--radius-md);
+  }
+  
+  .statNumber {
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .statNumberMobile {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .statNumberTablet {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .statLabel {
+    color: var(--color-gray-500);
+  }
+  
+  .statLabelMobile {
+    font-size: var(--font-size-xs);
+  }
+  
+  .statLabelTablet {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+  }
+  
+  /* 강의실 컨테이너 */
+  .classroomContainer {
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .classroomContainer::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .classroomContainerMobile {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .classroomContainerTablet {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-xl);
+  }
+  
+  /* 강의실 카드 */
+  .classroomCard {
+    background-color: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .classroomCard:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .classroomCardMobile {
+    margin: 0 var(--spacing-xs);
+    padding: var(--spacing-lg);
+    border-left: 4px solid;
+  }
+  
+  .classroomCardTablet {
+    padding: var(--spacing-xl);
+    border: 2px solid transparent;
+    border-radius: var(--radius-xl);
+  }
+  
+  .classroomCardTablet:hover {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* 카드 헤더 */
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .cardHeaderMobile {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .cardHeaderTablet {
+    margin-bottom: var(--spacing-xl);
+    align-items: flex-start;
+  }
+  
+  .roomName {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-800);
+    margin: 0;
+  }
+  
+  .roomNameMobile {
+    font-size: var(--font-size-lg);
+  }
+  
+  .roomNameTablet {
+    font-size: var(--font-size-xl);
+  }
+  
+  .statusBadge {
+    border-radius: var(--radius-full);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  .statusBadgeMobile {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-xs);
+  }
+  
+  .statusBadgeTablet {
+    padding: 6px var(--spacing-lg);
+    font-size: var(--font-size-sm);
+  }
+  
+  /* 카드 콘텐츠 */
+  .cardContent {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .cardContentMobile {
+    margin-bottom: 0;
+  }
+  
+  .cardContentTablet {
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  /* 모바일 카드 정보 */
+  .cardInfo {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+  }
+  
+  .cardInfoMobile {
+    display: flex;
+  }
+  
+  .cardInfoTablet {
+    display: none;
+  }
+  
+  /* 태블릿 그리드 정보 */
+  .gridInfoSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .gridInfoSectionMobile {
+    display: none;
+  }
+  
+  .gridInfoSectionTablet {
+    display: grid;
+  }
+  
+  .gridInfoItem {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .gridInfoLabel {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .gridInfoValue {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-800);
+  }
+  
+  /* 태블릿 액션 버튼 */
+  .gridActions {
+    display: flex;
+    gap: var(--spacing-sm);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-gray-100);
+  }
+  
+  .gridActionsMobile {
+    display: none;
+  }
+  
+  .gridActionsTablet {
+    display: flex;
+  }
+  
+  .gridActionButton {
+    flex: 1;
+    padding: 10px var(--spacing-lg);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-md);
+    background-color: white;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .gridActionButton:hover {
+    background-color: var(--color-gray-50);
+  }
+  
+  .gridPrimaryAction {
+    background-color: var(--color-primary);
+    color: white;
+    border: 1px solid var(--color-primary);
+  }
+  
+  .gridPrimaryAction:hover {
+    background-color: #2563EB;
+  }
+  
+  /* 빈 상태 */
+  .emptyState {
+    text-align: center;
+    color: var(--color-gray-500);
+    grid-column: 1 / -1; /* 그리드에서 전체 열 차지 */
+  }
+  
+  .emptyStateMobile {
+    padding: var(--spacing-2xl);
+  }
+  
+  .emptyStateTablet {
+    padding: var(--spacing-2xl) var(--spacing-2xl);
+  }
+  
+  .emptyIcon {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .emptyIconMobile {
+    font-size: 3rem;
+  }
+  
+  .emptyIconTablet {
+    font-size: 4rem;
+  }
+  
+  .emptyTitle {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-700);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .emptyTitleMobile {
+    font-size: var(--font-size-lg);
+  }
+  
+  .emptyTitleTablet {
+    font-size: var(--font-size-xl);
+  }
+  
+  .emptyDescription {
+    color: var(--color-gray-500);
+  }
+  
+  .emptyDescriptionMobile {
+    font-size: var(--font-size-sm);
+  }
+  
+  .emptyDescriptionTablet {
+    font-size: var(--font-size-base);
+  }

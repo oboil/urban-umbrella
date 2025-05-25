@@ -1,0 +1,234 @@
+/* styles/common/sidebar.module.css */
+
+/* 공통 스타일 */
+.section {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-700);
+  margin-bottom: var(--spacing-lg);
+}
+
+.filterButton {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin: 0 0 var(--spacing-sm) 0;
+  background-color: var(--color-gray-100);
+  border: none;
+  border-radius: var(--radius-md);
+  text-align: left;
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  transition: all 0.2s;
+}
+
+.filterButton:hover {
+  background-color: var(--color-gray-200);
+}
+
+.filterButtonActive {
+  background-color: #EBF8FF;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.floorGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.floorButton {
+  padding: var(--spacing-md);
+  background-color: var(--color-gray-100);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-600);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.floorButton:hover {
+  background-color: var(--color-gray-200);
+}
+
+.floorButtonActive {
+  background-color: #EBF8FF;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.dashboardSection {
+  background-color: #F8FAFC;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  margin-top: auto;
+}
+
+.dashboardTitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-700);
+  margin-bottom: var(--spacing-md);
+}
+
+.dashboardStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.dashboardStat {
+  text-align: center;
+}
+
+.dashboardNumber {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-xs);
+}
+
+.dashboardLabel {
+  font-size: 11px;
+  color: var(--color-gray-500);
+}
+
+/* 모바일 전용 스타일 */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.overlayVisible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobileSidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: white;
+  z-index: 1002;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileSidebarOpen {
+  transform: translateX(0);
+}
+
+.mobileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xl);
+  border-bottom: 1px solid var(--color-gray-200);
+  background-color: var(--color-gray-50);
+  flex-shrink: 0;
+}
+
+.mobileTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-800);
+  margin: 0;
+}
+
+.closeBtn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--color-gray-600);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtn:hover {
+  background-color: var(--color-gray-200);
+  color: var(--color-gray-800);
+}
+
+.content {
+  padding: var(--spacing-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 태블릿/데스크톱 전용 스타일 */
+.tabletSidebar {
+  width: 280px;
+  background-color: white;
+  border-right: 1px solid var(--color-gray-200);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 4px rgba(0,0,0,0.05);
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.tabletTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-800);
+  margin-bottom: var(--spacing-2xl);
+}
+
+/* 반응형 조정 */
+@media (max-width: 768px) {
+  .mobileSidebar {
+    width: 280px;
+  }
+  
+  .floorGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .mobileSidebar {
+    width: 100vw;
+  }
+}
+
+/* 태블릿에서 층별 버튼 레이아웃 조정 */
+@media (min-width: 768px) {
+  .tabletSidebar .floorGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tabletSidebar .dashboardNumber {
+    font-size: var(--font-size-xl);
+  }
+}
